@@ -1,0 +1,434 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7f4;
+    color: #183b29;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+nav h2 {
+    margin: 0;
+    color: #236b43;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #475569;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #236b43;
+}
+
+
+/* =========================
+   HOME PAGE
+   ========================= */
+
+.hero {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.tag {
+    color: #2b8954;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.1;
+    margin: 0 0 20px;
+}
+
+.hero-text > p:not(.tag) {
+    color: #64748b;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* Home Buttons */
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+
+.primary-btn {
+    background: #236b43;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #174d31;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 1px solid #236b43;
+    color: #236b43;
+    background: white;
+}
+
+.secondary-btn:hover {
+    background: #eef7f1;
+}
+
+
+/* Home Right Box */
+
+.hero-box {
+    width: 330px;
+    min-width: 330px;
+    height: 330px;
+
+    background: #e4f1e8;
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 40px;
+}
+
+.circle {
+    width: 90px;
+    height: 90px;
+
+    background: white;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero-box h3 {
+    font-size: 22px;
+    margin: 5px 0 10px;
+}
+
+.hero-box p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* Home Services */
+
+.services {
+    max-width: 1100px;
+    margin: 90px auto;
+    padding: 0 30px;
+}
+
+.services > h2 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    flex: 1;
+
+    border: 1px solid #e6e9e6;
+
+    transition: 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+    color: #2b8954;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+}
+
+.service-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.service-card a {
+    color: #236b43;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.service-card a:hover {
+    color: #174d31;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+
+/* =========================
+   CROP RECOMMENDATION PAGE
+   ========================= */
+
+.crop-page {
+    width: 850px;
+    max-width: 92%;
+    margin: 55px auto;
+}
+
+.crop-intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.crop-intro h1 {
+    font-size: 42px;
+    margin: 10px 0;
+    color: #183b29;
+}
+
+.crop-intro p:last-child {
+    color: #64748b;
+    font-size: 17px;
+}
+
+
+/* Crop Form Card */
+
+.crop-card {
+    background: white;
+    padding: 38px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Crop Inputs */
+
+.crop-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+.field input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.field input:hover {
+    border-color: #9ca3af;
+}
+
+.field input:focus {
+    border-color: #2b8954;
+    box-shadow: 0 0 0 3px rgba(43, 137, 84, 0.12);
+}
+
+.field input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* Crop Button */
+
+.crop-card button {
+    width: 100%;
+    margin-top: 30px;
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #236b43;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.crop-card button:hover {
+    background: #174d31;
+    transform: translateY(-2px);
+}
+
+
+/* Prediction Result */
+
+.result {
+    margin-top: 28px;
+    padding: 22px;
+
+    text-align: center;
+
+    background: #edf8f1;
+    border: 1px solid #ccebd7;
+    border-radius: 12px;
+}
+
+.result p {
+    margin: 0 0 6px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.result h2 {
+    margin: 0;
+    color: #246b45;
+    font-size: 28px;
+    text-transform: capitalize;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 750px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    nav a {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        margin-top: 45px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-box {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .crop-form {
+        grid-template-columns: 1fr;
+    }
+
+    .crop-card {
+        padding: 25px;
+    }
+
+    .crop-intro h1 {
+        font-size: 32px;
+    }
+}
+
+.field select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+    outline: none;
+}
+
+.field select:focus {
+    border-color: #2b8954;
+    box-shadow: 0 0 0 3px rgba(43, 137, 84, 0.12);
+}

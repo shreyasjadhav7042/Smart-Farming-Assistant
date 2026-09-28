@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crop Recommendation</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Smart Farming</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/crop">Crop Recommendation</a>
+            <a href="/yield">Yield Prediction</a>
+        </div>
+    </nav>
+
+
+    <div class="crop-page">
+
+        <div class="crop-intro">
+
+            <p class="tag">SMART AGRICULTURE</p>
+
+            <h1>Crop Recommendation</h1>
+
+            <p>
+                Enter the soil and environmental conditions
+                to get a suitable crop recommendation.
+            </p>
+
+        </div>
+
+
+        <div class="crop-card">
+
+            <form action="/predict_crop" method="POST">
+
+                <div class="crop-form">
+
+                    <div class="field">
+                        <label>Nitrogen (N)</label>
+                        <input type="number" step="any" name="N"
+                               placeholder="e.g. 90" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Phosphorus (P)</label>
+                        <input type="number" step="any" name="P"
+                               placeholder="e.g. 42" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Potassium (K)</label>
+                        <input type="number" step="any" name="K"
+                               placeholder="e.g. 43" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Temperature</label>
+                        <input type="number" step="any" name="temperature"
+                               placeholder="°C" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Humidity</label>
+                        <input type="number" step="any" name="humidity"
+                               placeholder="%" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Soil pH</label>
+                        <input type="number" step="any" name="ph"
+                               placeholder="e.g. 6.5" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Rainfall</label>
+                        <input type="number" step="any" name="rainfall"
+                               placeholder="mm" required>
+                    </div>
+
+                </div>
+
+                <button type="submit">
+                    Recommend Crop
+                </button>
+
+            </form>
+
+
+            {% if prediction %}
+
+            <div class="result">
+
+                <p>Recommended Crop</p>
+
+                <h2>{{ prediction }}</h2>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
