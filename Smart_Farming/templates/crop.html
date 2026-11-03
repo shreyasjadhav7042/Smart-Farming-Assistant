@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crop Recommendation</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Smart Farming</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/crop">Crop Recommendation</a>
+            <a href="/yield">Yield Prediction</a>
+        </div>
+    </nav>
+
+    <div class="crop-page">
+
+        <div class="crop-intro">
+
+            <p class="tag">SMART AGRICULTURE</p>
+
+            <h1>Crop Recommendation</h1>
+
+            <p>
+                Enter the soil and environmental conditions
+                to get a suitable crop recommendation.
+            </p>
+
+        </div>
+
+        <div class="crop-card">
+
+            <form action="/predict_crop" method="POST">
+
+                <div class="crop-form">
+
+                    <div class="field">
+                        <label>Nitrogen (N)</label>
+                        <input type="number" step="any" name="N"
+                               placeholder="e.g. 90" min="0" max="200" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Phosphorus (P)</label>
+                        <input type="number" step="any" name="P"
+                               placeholder="e.g. 42" min="0" max="200" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Potassium (K)</label>
+                        <input type="number" step="any" name="K"
+                               placeholder="e.g. 43" min="0" max="250" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Temperature (°C)</label>
+                        <input type="number" step="any" name="temperature"
+                               placeholder="e.g. 25" min="0" max="60" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Humidity (%)</label>
+                        <input type="number" step="any" name="humidity"
+                               placeholder="e.g. 80" min="0" max="100" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Soil pH</label>
+                        <input type="number" step="any" name="ph"
+                               placeholder="e.g. 6.5" min="0" max="14" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Rainfall (mm)</label>
+                        <input type="number" step="any" name="rainfall"
+                               placeholder="e.g. 200" min="0" max="5000" required>
+                    </div>
+
+                </div>
+
+                <button type="submit">
+                    Recommend Crop
+                </button>
+
+            </form>
+
+            {% if error %}
+            <div class="result">
+                <p style="color: red;">{{ error }}</p>
+            </div>
+            {% endif %}
+
+            {% if prediction %}
+            <div class="result">
+                <p>Recommended Crop</p>
+                <h2>{{ prediction }}</h2>
+            </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
